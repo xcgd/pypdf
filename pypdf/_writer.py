@@ -1318,7 +1318,7 @@ class PdfWriter:
             if not use_128bit:
                 alg = EncryptAlgorithm.RC4_40
         self.generate_file_identifiers()
-        self._encryption = Encryption.make(alg, permissions_flag, self._ID[0])
+        self._encryption = Encryption.make(alg, permissions_flag, self._ID[0].encode("utf-8"))
         # in case call `encrypt` again
         entry = self._encryption.write_entry(user_password, owner_password)
         if self._encrypt_entry:

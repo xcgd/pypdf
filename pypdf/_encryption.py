@@ -1153,6 +1153,7 @@ class Encryption:
         elif alg in (EncryptAlgorithm.AES_256_R5, EncryptAlgorithm.AES_256):
             stm_filter, str_filter, ef_filter = "/AESV3", "/AESV3", "/AESV3"
 
+        assert isinstance(first_id_entry, bytes)
         return Encryption(
             V=alg_ver,
             R=alg_rev,
